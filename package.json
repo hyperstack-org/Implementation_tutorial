@@ -1,6 +1,6 @@
 {
   "name": "hyperstack-client",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Hyperstack client-side Components, Operations and Stores",
   "main": "index.js",
   "repository": "https://github.com/hyperstack-org/hyperstack-client.git",
