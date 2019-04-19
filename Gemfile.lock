@@ -1,0 +1,152 @@
+GIT
+  remote: git://github.com/hyperstack-org/hyperstack.git
+  revision: 72cc2892f9c517f64ec441da629500274dc233e9
+  branch: edge
+  glob: ruby/*/*.gemspec
+  specs:
+    hyper-component (1.0.alpha1.4)
+      hyper-state (= 1.0.alpha1.4)
+      hyperstack-config (= 1.0.alpha1.4)
+      libv8 (~> 6.7.0)
+      mini_racer (~> 0.2.4)
+      opal (>= 0.11.0, < 0.12.0)
+      opal-activesupport (~> 0.3.1)
+      react-rails (>= 2.4.0, < 2.5.0)
+    hyper-router (1.0.alpha1.4)
+      hyper-component (= 1.0.alpha1.4)
+      hyper-state (= 1.0.alpha1.4)
+      opal-browser (~> 0.2.0)
+    hyper-state (1.0.alpha1.4)
+      hyperstack-config (= 1.0.alpha1.4)
+      opal (>= 0.11.0, < 0.12.0)
+    hyperstack-config (1.0.alpha1.4)
+      listen (~> 3.0)
+      mini_racer (~> 0.2.4)
+      opal (>= 0.11.0, < 0.12.0)
+      opal-browser (~> 0.2.0)
+      uglifier
+      websocket
+
+GIT
+  remote: https://github.com/opal/opal-jquery.git
+  revision: a00b5546520e3872470962c7392eb1a1a4236112
+  branch: master
+  specs:
+    opal-jquery (0.4.3)
+      opal (>= 0.10.0, < 0.12.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    actionpack (5.2.3)
+      actionview (= 5.2.3)
+      activesupport (= 5.2.3)
+      rack (~> 2.0)
+      rack-test (>= 0.6.3)
+      rails-dom-testing (~> 2.0)
+      rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    actionview (5.2.3)
+      activesupport (= 5.2.3)
+      builder (~> 3.1)
+      erubi (~> 1.4)
+      rails-dom-testing (~> 2.0)
+      rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    activesupport (5.2.3)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 0.7, < 2)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+    ast (2.4.0)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
+    builder (3.2.3)
+    concurrent-ruby (1.1.5)
+    connection_pool (2.2.2)
+    crass (1.0.4)
+    erubi (1.8.0)
+    execjs (2.7.0)
+    ffi (1.10.0)
+    hike (1.2.3)
+    i18n (1.6.0)
+      concurrent-ruby (~> 1.0)
+    libv8 (6.7.288.46.1)
+    listen (3.1.5)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
+      ruby_dep (~> 1.2)
+    loofah (2.2.3)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.5.9)
+    method_source (0.9.2)
+    mini_portile2 (2.4.0)
+    mini_racer (0.2.4)
+      libv8 (>= 6.3)
+    minitest (5.11.3)
+    nokogiri (1.10.2)
+      mini_portile2 (~> 2.4.0)
+    opal (0.11.4)
+      ast (>= 2.3.0)
+      hike (~> 1.2)
+      parser (= 2.3.3.1)
+      sourcemap (~> 0.1.0)
+    opal-activesupport (0.3.1)
+      opal (>= 0.5.0, < 1.0.0)
+    opal-browser (0.2.0)
+      opal
+      paggio
+    paggio (0.2.6)
+    parser (2.3.3.1)
+      ast (~> 2.2)
+    rack (2.0.7)
+    rack-test (1.1.0)
+      rack (>= 1.0, < 3)
+    rails-dom-testing (2.0.3)
+      activesupport (>= 4.2.0)
+      nokogiri (>= 1.6)
+    rails-html-sanitizer (1.0.4)
+      loofah (~> 2.2, >= 2.2.2)
+    railties (5.2.3)
+      actionpack (= 5.2.3)
+      activesupport (= 5.2.3)
+      method_source
+      rake (>= 0.8.7)
+      thor (>= 0.19.0, < 2.0)
+    rake (12.3.2)
+    rb-fsevent (0.10.3)
+    rb-inotify (0.10.0)
+      ffi (~> 1.0)
+    react-rails (2.4.7)
+      babel-transpiler (>= 0.7.0)
+      connection_pool
+      execjs
+      railties (>= 3.2)
+      tilt
+    ruby_dep (1.5.0)
+    sourcemap (0.1.1)
+    thor (0.20.3)
+    thread_safe (0.3.6)
+    tilt (2.0.9)
+    tzinfo (1.2.5)
+      thread_safe (~> 0.1)
+    uglifier (4.1.20)
+      execjs (>= 0.3.0, < 3)
+    websocket (1.2.8)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  hyper-component!
+  hyper-router!
+  hyper-state!
+  hyperstack-config!
+  opal
+  opal-browser
+  opal-jquery!
+  rake
+  uglifier
+
+BUNDLED WITH
+   2.0.1
