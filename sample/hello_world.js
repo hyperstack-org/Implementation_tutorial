@@ -2,7 +2,7 @@
 (function(Opal) {
   var TMP_3, self = Opal.top, $nesting = [], nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, $klass = Opal.klass, $send = Opal.send;
 
-  Opal.add_stubs(['$include', '$render', '$H1', '$ready?', '$create_element', '$[]']);
+  Opal.add_stubs(['$include', '$param', '$render', '$H1', '$ready?', '$[]', '$HelloWorld']);
   
   (function($base, $super, $parent_nesting) {
     function $HelloWorld(){};
@@ -12,13 +12,18 @@
 
     
     self.$include(Opal.const_get_qualified(Opal.const_get_relative($nesting, 'Hyperstack'), 'Component'));
+    self.$param("a");
     return $send(self, 'render', [], (TMP_HelloWorld_1 = function(){var self = TMP_HelloWorld_1.$$s || this, TMP_2;
 
     return $send(self, 'H1', [], (TMP_2 = function(){var self = TMP_2.$$s || this;
 
-      return "Hello World"}, TMP_2.$$s = self, TMP_2.$$arity = 0, TMP_2))}, TMP_HelloWorld_1.$$s = self, TMP_HelloWorld_1.$$arity = 0, TMP_HelloWorld_1));
+      return "Hello World from precompiled component"}, TMP_2.$$s = self, TMP_2.$$arity = 0, TMP_2))}, TMP_HelloWorld_1.$$s = self, TMP_HelloWorld_1.$$arity = 0, TMP_HelloWorld_1));
   })($nesting[0], null, $nesting);
-  return $send(Opal.const_get_relative($nesting, 'Document'), 'ready?', [], (TMP_3 = function(){var self = TMP_3.$$s || this;
+  return $send(Opal.const_get_relative($nesting, 'Document'), 'ready?', [], (TMP_3 = function(){var self = TMP_3.$$s || this, TMP_4;
 
-  return Opal.const_get_relative($nesting, 'React').$render(Opal.const_get_relative($nesting, 'ReactDOM').$create_element(Opal.const_get_relative($nesting, 'HelloWorld'), nil), Opal.const_get_relative($nesting, 'Element')['$[]']("#site"))}, TMP_3.$$s = self, TMP_3.$$arity = 0, TMP_3));
+  
+    self.$include(Opal.const_get_qualified(Opal.const_get_relative($nesting, 'Hyperstack'), 'Component'));
+    return $send(Opal.const_get_relative($nesting, 'Element')['$[]']("#site"), 'render', [], (TMP_4 = function(){var self = TMP_4.$$s || this;
+
+    return self.$HelloWorld()}, TMP_4.$$s = self, TMP_4.$$arity = 0, TMP_4));}, TMP_3.$$s = self, TMP_3.$$arity = 0, TMP_3));
 })(Opal);

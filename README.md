@@ -4,14 +4,9 @@ Pre-built client-side Hyperstack NPM module
 
 Work in progress...
 
-## Usage
-
-+ `yarn add hyperstack-client`
-+ Then require...
-
 ## Build
 
-+ `rake build`
++ `rake build` will build `dist/hyperstack-client.js` and `dist/opal.js`
 
 ## Publish to NPM
 

@@ -8,9 +8,16 @@ require 'opal-browser'
 require 'opal-jquery'
 require 'uglifier'
 
-desc 'Build hyperstack-js'
-task :build do
-  puts "About to build sample"
-  File.binwrite 'hello_world.js', Opal::Builder.build('./hello_world.rb').to_s 
+desc 'Build compiler-js'
+task :build_compiler do
+  puts "About to build compiler"
+  File.binwrite 'compiler.js', Opal::Builder.build('./compiler.rb').to_s
+  puts "done"
+end
+
+desc 'Build hello-world.js'
+task :build_hello_world do
+  puts "About to build compiler"
+  File.binwrite 'hello_world.js', Opal::Builder.build('./hello_world.rb').to_s
   puts "done"
 end
