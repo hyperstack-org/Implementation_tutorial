@@ -2,7 +2,7 @@
 (function(Opal) {
   var TMP_6, self = Opal.top, $nesting = [], nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, $klass = Opal.klass, $send = Opal.send, $hash2 = Opal.hash2;
 
-  Opal.add_stubs(['$include', '$render', '$HelloWorld', '$H1', '$on', '$BUTTON', '$alert', '$ready?', '$[]', '$create_element']);
+  Opal.add_stubs(['$include', '$render', '$HelloWorld', '$H2', '$on', '$BUTTON', '$alert', '$ready?', '$[]', '$create_element']);
   
   (function($base, $super, $parent_nesting) {
     function $HyperComponent(){};
@@ -31,7 +31,7 @@
     return $send(self, 'render', [Opal.const_get_relative($nesting, 'DIV')], (TMP_HelloWorld_2 = function(){var self = TMP_HelloWorld_2.$$s || this, TMP_3, TMP_4, TMP_5;
 
     
-      $send(self, 'H1', [], (TMP_3 = function(){var self = TMP_3.$$s || this;
+      $send(self, 'H2', [], (TMP_3 = function(){var self = TMP_3.$$s || this;
 
       return "Hello World from precompiled component"}, TMP_3.$$s = self, TMP_3.$$arity = 0, TMP_3));
       return $send($send(self, 'BUTTON', [], (TMP_4 = function(){var self = TMP_4.$$s || this;
