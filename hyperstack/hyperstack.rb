@@ -10,6 +10,6 @@ require 'opal-jquery'
 # end
 
 require 'hyper-component'
-require 'hyper-operation'
+# require 'hyper-operation'
 require 'hyper-state'
 require 'hyper-router'
