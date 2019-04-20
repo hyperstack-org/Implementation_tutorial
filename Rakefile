@@ -9,14 +9,15 @@ require 'opal-browser'
 require 'opal-jquery'
 require 'uglifier'
 
+
 desc 'Build hyperstack-js'
 task :build do
 
   mkdir 'dist' unless File.directory?('dist')
   Opal.append_path 'hyperstack'
 
-  puts "About to build hyperstack.js"
-  File.binwrite './dist/hyperstack.js', Opal::Builder.build('hyperstack.rb').to_s
+  puts "About to build hyperstack-client.js"
+  File.binwrite './dist/hyperstack-client.js', Opal::Builder.build('hyperstack.rb').to_s
   puts "done"
 
   puts "About to build opal.js"

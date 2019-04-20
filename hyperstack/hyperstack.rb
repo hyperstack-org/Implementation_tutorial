@@ -2,6 +2,7 @@ require 'active_support'
 require 'browser/interval'
 require 'browser/delay'
 require 'opal-jquery'
+# require 'react_ujs'
 
 # module Hyperstack
 #   class Component
