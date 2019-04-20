@@ -1,0 +1,16 @@
+require 'rubygems'
+# require 'opal-rails'
+# require 'hyper-operation'
+# require 'hyper-store'
+require 'hyper-state'
+require 'hyper-router'
+require 'opal-browser'
+require 'opal-jquery'
+require 'uglifier'
+
+desc 'Build hello-world.js'
+task :build do
+  puts "About to build hello_world.js"
+  File.binwrite 'hello_world.js', Opal::Builder.build('./hello_world.rb').to_s
+  puts "done"
+end
