@@ -1,24 +1,24 @@
-# Example 1: Components compiled by Rake task
+# Example 2: Components built by a Rake task
 
-This is the simplest example, the Components are built with a Rake task and loaded by a static HTML page
+In this example, the Components are pre-built by a rake task and the results loaded into the page as JS file
 
-## Build the Component
+## Usage
+
+### Build the Component
 
 + `rake build` will build the `hello_world.rb` Component
 
-## Open the webpage
+### Open the webpage
 
-+ Open `index.html` in your browser
-+ Any changes to `hello_world.rb` need `rake build` and a page refresh as there is no server to rebuild for us.
++ Open `index.html`in your browser
++ Any changes to `hello_world.rb` need `rake build` and a page refresh as there is no server.
 
-## What's the stub?
+## Advantages
 
-+ Hyperstack requires `ReactRailsUJS` which is the JavaScript helpers to create a Component in react-rails. We do not need them as we are creating the Component when the document is loaded:
++ This approach could be adapted for a large SPA application (using `require_tree` to build a folder of components)
++ The output files can be minimized and compressed
++ Errors can be reported during the build process
 
-```ruby
-Document.ready? do
-  include Hyperstack::Component # for ReactAPI
-  mount_point = Element['#top_level_component']
-  ReactAPI.render(ReactAPI.create_element(TopLevelComponent, {}), mount_point)
-end
-```
+## Disadvantages
+
++ Constantly running `rake build` is a pain - the Components should be rebuilt on page refresh or HotLoaded - (see Example 3)

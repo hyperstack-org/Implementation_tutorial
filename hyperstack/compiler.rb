@@ -1,6 +1,7 @@
 require 'opal/compiler'
 
 Document.ready? do
+  include Hyperstack::Component # for ReactAPI
   promises = []
   code = []
   Element['script[type="text/ruby"]'].each_with_index do |script_tag, index|
@@ -41,7 +42,7 @@ Document.ready? do
       params = Hash[*Hash.new(mount_point.data).collect do |name, value|
         [name.underscore, value] unless name == 'reactrbMount'
       end.compact.flatten(1)]
-      puts "about to render"
+      puts "about to render component #{component}"
       ReactAPI.render(ReactAPI.create_element(component, params), mount_point)
     end if continue_to_mounting
   end

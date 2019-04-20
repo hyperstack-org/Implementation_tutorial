@@ -1,24 +1,31 @@
-# Hyperstack static page compiled by Rake task
+# Example 1: Components built in the browser
 
-This is the simplest example, the Components are built with a Rake task and loaded by a static HTML page
+This is the simplest example, Hyperstack Components are compiled in your browser using a compiled version of Opal.Compiler
 
-## Build the Component
-
-+ `rake build` will build the `hello_world.rb` Component
-
-## Open the webpage
-
-+ Open `index.html`in your browser
-+ Any changes to `hello_world.rb` need `rake build` and a page refresh as there is no server.
-
-## What's the stub?
-
-+ Hyperstack requires `ReactRailsUJS` which is the JavaScript helpers to create a Component in react-rails. We do not need them as we are creating the Component when the document is loaded:
+Notice that the example Component is in a script block in the index.html file
 
 ```ruby
-Document.ready? do
-  include Hyperstack::Component # for ReactAPI
-  mount_point = Element['#top_level_component']
-  ReactAPI.render(ReactAPI.create_element(TopLevelComponent, {}), mount_point)
-end
+<script type="text/ruby">
+  class TopLevelComponent
+    include Hyperstack::Component
+    render(DIV) do
+      H1 { "Hello World from a Hyperstack Component" }
+      BUTTON { 'Click me' }.on(:click) { alert 'hello' }
+    end
+  end
+</script>
 ```
+
+## Usage
+
++ Simply load `index.html` into your browser
++ Make changes to the `text/ruby` script block and refresh
+
+### Advantages
+
++ Absolutely no server required
+
+### Disadvantages
+
++ Code is compiled on load, so this would only work for a small application
++ `compiler.js` is the whole Opal Compiler, which is a large file

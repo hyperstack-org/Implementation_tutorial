@@ -1,13 +1,27 @@
-# hyperstack-client-npm
+# Hyperstack serverless (client-only)
 
-Pre-built client-side Hyperstack NPM module
+## Examples
 
-Work in progress...
+There are a number of ways of building and integrating client-side Hyperstack Components. Please see the examples below which increase in complexity.
 
-## Build
+### Example 1: Components built in the browser
 
-+ `rake build` will build `dist/hyperstack-client.js` and `dist/opal.js`
+The simplest approach is to build Components in your browser with no server needed at all.
 
-## Publish to NPM
+See [example1/README.md](example1/README.md)
+
+### Example 2: Components built by a Rake task
+
+A slightly better approach is to build Components in a Rake task outside of the browser.
+
+See [example2/README.md](example2/README.md)
+
+## Building & Publishing hyperstack-client NPM
+
+### Build
+
++ `rake build` will build `dist/hyperstack-client.js`, `dist/compiler.js` and `dist/opal.js`
+
+### Publish to NPM
 
 + `yarn publish` and increment the version number

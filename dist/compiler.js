@@ -27233,12 +27233,13 @@ if (str == null) str = nil;
   }
   var TMP_1, self = Opal.top, $nesting = [], nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, $send = Opal.send, $truthy = Opal.truthy;
 
-  Opal.add_stubs(['$require', '$ready?', '$each_with_index', '$[]', '$attr', '$<<', '$then', '$get', '$body', '$[]=', '$-', '$html', '$when', '$compile', '$new', '$join', '$message', '$each', '$puts', '$const_get', '$flatten', '$compact', '$collect', '$data', '$==', '$underscore', '$render', '$create_element']);
+  Opal.add_stubs(['$require', '$ready?', '$include', '$each_with_index', '$[]', '$attr', '$<<', '$then', '$get', '$body', '$[]=', '$-', '$html', '$when', '$compile', '$new', '$join', '$message', '$each', '$puts', '$const_get', '$flatten', '$compact', '$collect', '$data', '$==', '$underscore', '$render', '$create_element']);
   
   self.$require("opal/compiler");
   return $send(Opal.const_get_relative($nesting, 'Document'), 'ready?', [], (TMP_1 = function(){var self = TMP_1.$$s || this, TMP_2, TMP_4, promises = nil, code = nil;
 
   
+    self.$include(Opal.const_get_qualified(Opal.const_get_relative($nesting, 'Hyperstack'), 'Component'));
     promises = [];
     code = [];
     $send(Opal.const_get_relative($nesting, 'Element')['$[]']("script[type=\"text/ruby\"]"), 'each_with_index', [], (TMP_2 = function(script_tag, index){var self = TMP_2.$$s || this, TMP_3, src = nil, $writer = nil;
@@ -27314,7 +27315,7 @@ if (name == null) name = nil;if (value == null) value = nil;
               } else {
               return [name.$underscore(), value]
             }}, TMP_6.$$s = self, TMP_6.$$arity = 2, TMP_6)).$compact().$flatten(1)));
-          self.$puts("about to render");
+          self.$puts("" + "about to render component " + (component));
           return Opal.const_get_relative($nesting, 'ReactAPI').$render(Opal.const_get_relative($nesting, 'ReactAPI').$create_element(component, params), mount_point);}, TMP_5.$$s = self, TMP_5.$$arity = 1, TMP_5))
         } else {
         return nil
