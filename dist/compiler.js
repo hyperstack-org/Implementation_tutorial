@@ -27258,7 +27258,7 @@ if (response == null) response = nil;
         $send(code, '[]=', Opal.to_a($writer));
         return $writer[$rb_minus($writer["length"], 1)];
       };}, TMP_2.$$s = self, TMP_2.$$arity = 2, TMP_2));
-    return $send($send(Opal.const_get_relative($nesting, 'Promise'), 'when', Opal.to_a(promises)), 'then', [], (TMP_4 = function(){var self = TMP_4.$$s || this, TMP_5, compiled_code = nil, continue_to_mounting = nil, e = nil, message = nil;
+    return $send($send(Opal.const_get_relative($nesting, 'Promise'), 'when', Opal.to_a(promises)), 'then', [], (TMP_4 = function(){var self = TMP_4.$$s || this, TMP_5, compiled_code = nil, continue_to_mounting = nil, e = nil;
 
     
       compiled_code = nil;
@@ -27269,9 +27269,7 @@ if (response == null) response = nil;
       } catch ($err) {
         if (Opal.rescue($err, [Opal.const_get_relative($nesting, 'Exception')])) {e = $err;
           try {
-            
-            message = "" + "Error raised while compiling: " + (e.$message());
-            console.error(message);
+            console.error("Error raused when compiling e.$message()")
           } finally { Opal.pop_exception() }
         } else { throw $err; }
       };;
@@ -27284,9 +27282,7 @@ if (response == null) response = nil;
         } catch ($err) {
           if (Opal.rescue($err, [Opal.const_get_relative($nesting, 'Exception')])) {e = $err;
             try {
-              
-              message = "" + "Error raised during execution: " + (e.$message());
-              console.error(message);
+              console.error("Error raused when compiling e.$message()")
             } finally { Opal.pop_exception() }
           } else { throw $err; }
         };};
@@ -27306,8 +27302,7 @@ if (mount_point == null) mount_point = nil;
             if (Opal.rescue($err, [Opal.const_get_relative($nesting, 'StandardError')])) {
               try {
                 
-                message = "" + "Could not find Component class named " + (component_name);
-                console.error(message);
+                console.error("Could not find Component class named component_name");
                 return nil;;
               } finally { Opal.pop_exception() }
             } else { throw $err; }

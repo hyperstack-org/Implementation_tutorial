@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
-
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -18,11 +17,15 @@
     <!-- Opal (or bring your own) -->
     <script src="../dist/opal.js"></script>
 
+    <script>
+      // this stub is required to get hyperstack-client.js to load without error
+      // we do not need it as we are creating the top_level_component
+      var ReactRailsUJS = {};
+    </script>
+
     <!--Hyperstack -->
-    <script src="../dist/react-ujs-stub.js"></script>
     <script src="../dist/hyperstack-client.js"></script>
-    <!-- <script src="./compiler.js"></script> -->
-    <script src="./hello_world.js"></script>
+    <script src="../dist/compiler.js"></script>
 
     <script type="text/ruby">
       class TopLevelComponent
@@ -37,12 +40,10 @@
         end
       end
     </script>
+    
   </head>
 
   <body>
-    <h1> Test static</h1>
-    <!-- <div data-hyperstack-mount="TopLevelComponent"></div> -->
-    <div id="top_level_component"></div>
+    <div data-hyperstack-mount="TopLevelComponent"></div>
   </body>
-
 </html>

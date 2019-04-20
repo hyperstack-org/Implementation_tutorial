@@ -20,6 +20,10 @@ task :build do
   File.binwrite './dist/hyperstack-client.js', Opal::Builder.build('hyperstack.rb').to_s
   puts "done"
 
+  puts "About to build compiler"
+  File.binwrite './dist/compiler.js', Opal::Builder.build('compiler.rb').to_s
+  puts "done"
+
   puts "About to build opal.js"
   File.binwrite './dist/opal.js', Opal::Builder.build('opal').to_s
   puts "done"

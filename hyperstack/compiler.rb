@@ -1,8 +1,6 @@
 require 'opal/compiler'
 
 Document.ready? do
-  # rubocop:disable Lint/RescueException
-  # need to catch and report all exceptions
   promises = []
   code = []
   Element['script[type="text/ruby"]'].each_with_index do |script_tag, index|
@@ -21,15 +19,13 @@ Document.ready? do
     begin
       compiled_code = Opal::Compiler.new(code.join("\n")).compile
     rescue Exception => e
-      message = "Error raised while compiling: #{e.message}"
-      `console.error(message)`
+      `console.error("Error raused when compiling #{e.message}")`
     end
     begin
       `eval(compiled_code)`
       continue_to_mounting = true
     rescue Exception => e
-      message = "Error raised during execution: #{e.message}"
-      `console.error(message)`
+      `console.error("Error raused when compiling #{e.message}")`
     end if compiled_code
     Element['[data-hyperstack-mount]'].each do |mount_point|
       puts "found mount point"
@@ -39,8 +35,7 @@ Document.ready? do
         puts "found #{component_name}"
         component = Object.const_get(component_name)
       rescue
-        message = "Could not find Component class named #{component_name}"
-        `console.error(message)`
+        `console.error("Could not find Component class named #{component_name}")`
         next
       end
       params = Hash[*Hash.new(mount_point.data).collect do |name, value|
