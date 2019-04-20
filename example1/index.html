@@ -14,16 +14,21 @@
     <script src="https://unpkg.com/react-router-dom/umd/react-router-dom.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
+    <script>
+      // this stub is required to get hyperstack-client.js to load without error
+      // we do not need it as we are creating the top_level_component
+      var ReactRailsUJS = {};
+    </script>
+
     <!--Hyperstack -->
     <script src="../dist/opal.js"></script>
-    <script src="./react-ujs-stub.js"></script>
     <script src="../dist/hyperstack-client.js"></script>
-    <script src="./hello_world.js"></script>
 
+    <!-- The pre-compiled Component -->
+    <script src="./hello_world.js"></script>
   </head>
 
   <body>
-    <h1> Test page sample</h1>
     <div id="top_level_component"></div>
   </body>
 

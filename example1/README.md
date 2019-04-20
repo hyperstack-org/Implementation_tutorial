@@ -9,7 +9,7 @@ This is the simplest example, the Components are built with a Rake task and load
 ## Open the webpage
 
 + Open `index.html`in your browser
-+ Any changes to `hello_world.rb` need `rake build` and a page refrest as there is no server
++ Any changes to `hello_world.rb` need `rake build` and a page refresh as there is no server.
 
 ## What's the stub?
 

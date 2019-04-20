@@ -10,7 +10,7 @@ end
 
 class HelloWorld < HyperComponent
   render(DIV) do
-    H2 { 'Hello World from precompiled component' }
+    H1 { 'Hello World from a pre-compiled Component' }
     BUTTON { 'Click me' }.on(:click) { alert 'hello' }
   end
 end
