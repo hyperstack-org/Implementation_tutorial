@@ -1,6 +1,6 @@
 require 'rubygems'
-require 'opal-rails'
-require 'hyper-operation'
+# require 'opal-rails'
+# require 'hyper-operation'
 # require 'hyper-store'
 require 'hyper-state'
 require 'hyper-router'
