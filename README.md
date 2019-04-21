@@ -1,12 +1,12 @@
 # Hyperstack Implementation Options
 
-Hyperstack is designed for building  **client-centric, server-agnostic modern web-applications in Ruby**. Hyperstack provides an architecture which we believe contains all the ingredients necessary to build an Isomorphic application, but the architecture is not opinionated and will happily co-exist with other approaches.
+Hyperstack is designed for building  **client-centric, server-agnostic modern web-applications in Ruby**. Hyperstack provides an architecture which we believe contains all the concepts  necessary to build an Isomorphic application, but the architecture is not opinionated and will happily co-exist with other approaches.
 
 The goal of this repo is to demonstrate a number of different ways of implementing Hyperstack alongside existing web frameworks and architectures.  
 
-## Hyperstack Architectural Ingredients
+## Hyperstack Architectural Concepts
 
-The Hyperstack architectural ingredients are:
+The core Hyperstack architectural concepts are:
 
 + **Components** describe how the UI will display the current application state and how it will handle user actions. Using React, Components automatically re-render parts of the display as state changes due to local or remote activities.
 
@@ -27,7 +27,7 @@ There are two fundamental ways of using Hyperstack:
 + **Server** - integrated with a web server. In this model the web server compiles Ruby to JavaScript. There is tight coupling of the services of the web server and the client (Isomorphic Models and Operations).
 + **Serverless** - as a client-only library. In this model there needs to be an external build process to compile your code from Ruby to JavaScript. Hyperstack is imported from a CDN or as a Webpack module.
 
-The table below illustrates which of the Architectural Ingredients are available depending on the implementation:
+The table below illustrates which of the Architectural concepts are available depending on the implementation:
 
 |   	      |Components|Stores|Router|Isomorphic Models|Isomorphic Operations|Policies|
 |---	      |---	     |---	  |---	 |---           	  |---           	     |---     |
