@@ -1,27 +1,45 @@
-# Hyperstack serverless (client-only)
+# Hyperstack Implementation Options
 
-## Examples
+Hyperstack is designed for building  **client-centric, server-agnostic modern web-applications in Ruby**. Hyperstack provides an architecture which we believe contains all the ingredients necessary to build an Isomorphic application, but the architecture is not opinionated and will happily co-exist with other approaches.
 
-There are a number of ways of building and integrating client-side Hyperstack Components. Please see the examples below which increase in complexity.
+The goal of this repo is to demonstrate a number of different ways of implementing Hyperstack alongside existing web frameworks and architectures.  
 
-### Example 1: Components built in the browser
+## Hyperstack Architectural Ingredients
 
-The simplest approach is to build Components in your browser with no server needed at all.
+The Hyperstack architectural ingredients are:
 
-See [example1](example1/)
++ **Components** describe how the UI will display the current application state and how it will handle user actions. Using React, Components automatically re-render parts of the display as state changes due to local or remote activities.
 
-### Example 2: Components built by a Rake task
++ **Stores** hold the local application state. Stores are Ruby classes that keep the dynamic parts of the state in special state variables. We use Stores to share state between Components.
 
-A slightly better approach is to build Components in a Rake task outside of the browser.
++ **Router** provides client-side routing by wrapping ReactRouter. Client-side routing is fundamental for single page applications as it allows the user to navigate using their browser history as if it were a multi-page application.
 
-See [example2](example2/)
++ **Isomorphic Models** represent ActiveRecord models in your Isomorphic (client-side) code. Changes made to Model data is automatically synchronized between the client & server and any other client which might be displaying that data.  
 
-## Building & Publishing hyperstack-client NPM
++ **Isomorphic Operations** encapsulate business logic and act as a client-server API. In a traditional MVC architecture, Operations end up either in Controllers, Models or some other secondary construct such as service objects, helpers, or concerns. In Hyperstack they are first class objects.
 
-### Build
++ **Policies** keep authorization logic out of Models, and Operations, and also allows the isomorphic transport mechanism to know what and when to communicate between client and server.
 
-+ `rake build` will build `dist/hyperstack-client.js`, `dist/compiler.js` and `dist/opal.js`
+## Server or Serverless Implementation
 
-### Publish to NPM
+There are two fundamental ways of using Hyperstack:
 
-+ `yarn publish` and increment the version number
++ **Server** - integrated with a web server. In this model the web server compiles Ruby to JavaScript. There is tight coupling of the services of the web server and the client (Isomorphic Models and Operations).
++ **Serverless** - as a client-only library. In this model there needs to be an external build process to compile your code from Ruby to JavaScript. Hyperstack is imported from a CDN or as a Webpack module.
+
+The table below illustrates which of the Architectural Ingredients are available depending on the implementation:
+
+|   	      |Components|Stores|Router|Isomorphic Models|Isomorphic Operations|Policies|
+|---	      |---	     |---	  |---	 |---           	  |---           	     |---     |
+|Server     |√         |√  	  |√  	 |√             	  |√             	     |√       |
+|Serverless |√         |√  	  |√  	 |no            	  |no             	   |no      |
+
+## Server Implementation
+
+Hyperstack is only integrated with Rails at the moment, but we plan to add additional frameworks in the future.
+
++ [Hyperstack and Rails](/Server/Rails)
+
+## Serverless Implementation
+
++ [Serverless Hyperstack](/Serverless)

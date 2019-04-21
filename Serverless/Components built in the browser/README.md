@@ -1,4 +1,4 @@
-# Example 1: Components built in the browser
+# Components built in the browser
 
 This is the simplest example, Hyperstack Components are compiled in your browser using a compiled version of Opal.Compiler
 

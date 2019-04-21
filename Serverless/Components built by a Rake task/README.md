@@ -1,4 +1,4 @@
-# Example 2: Components built by a Rake task
+# Components built by a Rake task
 
 In this example, the Components are pre-built by a rake task and the results loaded into the page as JS file
 
