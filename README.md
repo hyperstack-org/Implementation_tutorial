@@ -1,5 +1,7 @@
 # Hyperstack Implementation Options
 
+WORK IN PROGRESS
+
 Hyperstack is designed for building  **client-centric, server-agnostic modern web-applications in Ruby**. Hyperstack provides an architecture which we believe contains all the concepts  necessary to build an Isomorphic application, but the architecture is not opinionated and will happily co-exist with other approaches.
 
 The goal of this repo is to demonstrate a number of different ways of implementing Hyperstack alongside existing web frameworks and architectures.  
