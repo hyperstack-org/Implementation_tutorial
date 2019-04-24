@@ -1,4 +1,6 @@
-### Rails
+# Hyperstack and Rails
+
+WORK IN PROGRESS
 
 There are however a number of ways of implementing Hyperstack with Rails:
 
