@@ -20,26 +20,52 @@ The core Hyperstack architectural concepts are:
 
 + **Policies** keep authorization logic out of Models, and Operations, and also allows the isomorphic transport mechanism to know what and when to communicate between client and server.
 
-## Server or Serverless Implementation
+## Web server, Serverless, and Universal Implementation
 
 There are two fundamental ways of using Hyperstack:
 
-+ **Server** - integrated with a web server. In this model the web server compiles Ruby to JavaScript. There is tight coupling of the services of the web server and the client (Isomorphic Models and Operations).
++ **Web Server** - integrated with a web server. In this model the web server compiles Ruby to JavaScript. There is tight coupling of the services of the web server and the client (Isomorphic Models and Operations).
 + **Serverless** - as a client-only library. In this model there needs to be an external build process to compile your code from Ruby to JavaScript. Hyperstack is imported from a CDN or as a Webpack module.
++ **Universal** - we believe a modern web application needs to run in the browser, as a desktop application and as a mobile app for IOS and Android. This project is still in inception, but our goal is to integrate with the Cordova build process to allow you build a Cordova project in Ruby.
 
 The table below illustrates which of the Architectural concepts are available depending on the implementation:
 
 |   	      |Components|Stores|Router|Isomorphic Models|Isomorphic Operations|Policies|
 |---	      |---	     |---	  |---	 |---           	  |---           	     |---     |
-|Server     |√         |√  	  |√  	 |√             	  |√             	     |√       |
+|Web Server |√         |√  	  |√  	 |√             	  |√             	     |√       |
 |Serverless |√         |√  	  |√  	 |no            	  |no             	   |no      |
+|Universal  |√         |√  	  |√  	 |√             	  |√              	   |√       |
 
-## Server Implementation
+## Server Implementation (Rails)
 
-Hyperstack is only integrated with Rails at the moment, but we plan to add additional frameworks in the future.
+Hyperstack is only integrated with Rails at the moment, but we plan to add additional frameworks in the future. To date, all server integrated has been focused on Rails and Hyperstack is highly integrated with Rails with the following functionality out the box:
 
-+ [Hyperstack and Rails](/Server/Rails)
++ Works with Rails 4.x and 5.x
++ All Hyperstack COMPS architectural concepts (explained above)
++ A build and deploy system with HotLoading code
++ Fully integrated with Webpacker and Webpack
++ Isomorphic Models (sharing the same Model between in your client and server code)
++ Data synchronization (changes made either on the server or client are pushed to all clients currently displaying that data)
++ A Policy system for regulating data access and data broadcast
++ Isomorphic Operations (Operations are classes that encapsulate business logic which can execute on the client or server - they mitigate the need for an internal API)
++ HyperSpec for Isomorphic RSpec testing across the client and server
++ Il8n functionality for multi language sites
+
++ Please see [Hyperstack Rails](/Server/Rails) for more information and examples
 
 ## Serverless Implementation
 
-+ [Serverless Hyperstack](/Serverless)
+In a non-Rails environment, the client-side architectural components of Hyperstack can still be used to build interactive websites in Ruby.
+
+The main consideration is the build process and there are several supported:
+
++ Compiling Ruby code in your browser (suitable for testing and very small sites)
++ Compiling Ruby code via Rake tasks (cumbersome but a simple solution that works)
++ Using Rack + Webpack for a build and deploy system equal to react.js + Webpack
++ Going completely native and using react.js + Webpack to build and compile Hyperstack
+
++ Please see [Hyperstack Serverless](/Serverless) for more information and examples
+
+## Universal Application
+
+This project is still in inception and testing phase. If you are interested or have experience here please reach out to us on Slack. As this project evolves we will add examples here.
