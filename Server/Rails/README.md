@@ -1,5 +1,7 @@
 # Hyperstack and Rails
 
+WORK IN PROGRESS
+
 Hyperstack is most mature in the Rails ecosystem. There are however a number of ways of implementing Hyperstack with Rails:
 
 + Adding Hyperstack to an existing multi-page Rails application
