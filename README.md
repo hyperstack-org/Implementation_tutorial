@@ -28,7 +28,7 @@ There are two fundamental ways of using Hyperstack:
 
 + **Web Server** - integrated with a web server. In this model the web server compiles Ruby to JavaScript. There is tight coupling of the services of the web server and the client (Isomorphic Models and Operations).
 + **Serverless** - as a client-only library. In this model there needs to be an external build process to compile your code from Ruby to JavaScript. Hyperstack is imported from a CDN or as a Webpack module.
-+ **Universal** - we believe a modern web application needs to run in the browser, as a desktop application and as a mobile app for IOS and Android. This project is still in inception, but our goal is to integrate with the Cordova build process to allow you build a Cordova project in Ruby.
++ **Hyrbid (or Universal)** - we believe a modern web application needs to run in the browser, as a desktop application and as a mobile app for IOS and Android. This project is still in inception, but our goal is to integrate with the Cordova build process to allow you build a Cordova project in Ruby - OR - extend our DSL to cover ReactNative as we do React today.
 
 The table below illustrates which of the Architectural concepts are available depending on the implementation:
 
@@ -36,7 +36,7 @@ The table below illustrates which of the Architectural concepts are available de
 |---	      |---	     |---	  |---	 |---           	  |---           	     |---     |
 |Web Server |√         |√  	  |√  	 |√             	  |√             	     |√       |
 |Serverless |√         |√  	  |√  	 |no            	  |no             	   |no      |
-|Universal  |√         |√  	  |√  	 |√             	  |√              	   |√       |
+|Hybrid     |√         |√  	  |√  	 |√             	  |√              	   |√       |
 
 ## Server Implementation (Rails)
 
@@ -68,6 +68,13 @@ The main consideration is the build process and there are several supported:
 
 + Please see [Hyperstack Serverless](/Serverless) for more information and examples
 
-## Universal Application
+## Hybrid (or Universal) Applications
 
-This project is still in inception and testing phase. If you are interested or have experience here please reach out to us on Slack. As this project evolves we will add examples here.
+This project is still in inception and testing phase. As this project evolves we will add examples here.
+
+There are two routes we are exploring:
+
++ Setting ub a build ebvironment using Cordova to build for Web, Desktop and Mobile from one codebase
++ Extending our DSL to cover React Native as we cover React today for the web
+
+If you are interested or have experience here please reach out to us on Slack.
