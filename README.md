@@ -1,80 +1,58 @@
-# Hyperstack Implementation Options
+# Hyperstack Implementation Tutorial
 
 WORK IN PROGRESS
 
-Hyperstack is designed for building  **client-centric, server-agnostic modern web-applications in Ruby**. Hyperstack provides an architecture which we believe contains all the concepts  necessary to build an Isomorphic application, but the architecture is not opinionated and will happily co-exist with other approaches.
+Hyperstack lets you build  **client-centric, server-agnostic modern web-applications in Ruby**. Hyperstack provides an architecture which we believe contains all the concepts necessary to build an Isomorphic application, but the architecture is not opinionated and happily co-exist with other approaches.
 
-The goal of this repo is to demonstrate a number of different ways of implementing Hyperstack alongside existing web frameworks and architectures.  
+The goal of this tutorial is to demonstrate some different ways of implementing Hyperstack alongside existing web frameworks and architectures.  
+
+This tutorial focuses on the following three implementation scenarios:
+
++ [Section 1](/section_1/readme.md) Building a Hyperstack SPA with a new Rails application - this show off Hyperstack in all its glory, and we will cover all the key concepts
+
++ [Section 2](/section_2/readme.md) Adding Hyperstack to an existing multi-page Rails application. This section will demonstrate how to add Hyperstack bit by bit without a massive refactor
+
++ [Section 3](/section_3/readme.md) Building a complex Hybrid (or Universal) application consisting of web, desktop and mobile UIs
+
+Before we start the tutorial, we should discuss some of the core Hyperstack architectural concepts:
 
 ## Hyperstack Architectural Concepts
 
 The core Hyperstack architectural concepts are:
 
-+ **Components** describe how the UI will display the current application state and how it will handle user actions. Using React, Components automatically re-render parts of the display as state changes due to local or remote activities.
++ **Components** render the user interface and handle user actions which alter the application state. Using React, Components automatically re-render parts of the display as state changes due to local or remote activities.
 
 + **Stores** hold the local application state. Stores are Ruby classes that keep the dynamic parts of the state in special state variables. We use Stores to share state between Components.
 
-+ **Router** provides client-side routing by wrapping ReactRouter. Client-side routing is fundamental for single page applications as it allows the user to navigate using their browser history as if it were a multi-page application.
++ **Router** provides client-side routing by wrapping ReactRouter. Client-side routing is fundamental for single-page applications as it allows the user to navigate using their browser history as if it were a multi-page application.
 
 + **Isomorphic Models** represent ActiveRecord models in your Isomorphic (client-side) code. Changes made to Model data is automatically synchronized between the client & server and any other client which might be displaying that data.  
 
-+ **Isomorphic Operations** encapsulate business logic and act as a client-server API. In a traditional MVC architecture, Operations end up either in Controllers, Models or some other secondary construct such as service objects, helpers, or concerns. In Hyperstack they are first class objects.
++ **Isomorphic Operations** encapsulate business logic and act as a client-server API. In a traditional MVC architecture, Operations end up either in Controllers, Models or some other secondary construct such as service objects, helpers, or concerns. In Hyperstack they are first-class objects.
 
 + **Policies** keep authorization logic out of Models, and Operations, and also allows the isomorphic transport mechanism to know what and when to communicate between client and server.
 
-## Web server, Serverless, and Universal Implementation
+## [Section 1](/section_1/readme.md) - Building a new Rails Single Page Application
 
-There are two fundamental ways of using Hyperstack:
+This section will cover the following topics:
 
-+ **Web Server** - integrated with a web server. In this model the web server compiles Ruby to JavaScript. There is tight coupling of the services of the web server and the client (Isomorphic Models and Operations).
-+ **Serverless** - as a client-only library. In this model there needs to be an external build process to compile your code from Ruby to JavaScript. Hyperstack is imported from a CDN or as a Webpack module.
-+ **Hyrbid (or Universal)** - we believe a modern web application needs to run in the browser, as a desktop application and as a mobile app for IOS and Android. This project is still in inception, but our goal is to integrate with the Cordova build process to allow you build a Cordova project in Ruby - OR - extend our DSL to cover ReactNative as we do React today.
++ Creating a new Rail app with Hyperstack
++ Adding a SPA Router
++ Using JavaScript libraries
++ Working with Isomorphic models and Policies
++ Deploying to production
 
-The table below illustrates which of the Architectural concepts are available depending on the implementation:
+## [Section 2](/section_2/readme.md) - Adding Hyperstack to an existing Rails application
 
-|   	      |Components|Stores|Router|Isomorphic Models|Isomorphic Operations|Policies|
-|---	      |---	     |---	  |---	 |---           	  |---           	     |---     |
-|Web Server |√         |√  	  |√  	 |√             	  |√             	     |√       |
-|Serverless |√         |√  	  |√  	 |no            	  |no             	   |no      |
-|Hybrid     |√         |√  	  |√  	 |√             	  |√              	   |√       |
+This section will cover the following topics:
 
-## Server Implementation (Rails)
++ Adding the Hyperstack Gem and configuration to an existing Rail application
++ Adding Components to Rails views
++ Transforming traditional Models into Isomorphic Models
 
-Hyperstack is only integrated with Rails at the moment, but we plan to add additional frameworks in the future. To date, all server integrated has been focused on Rails and Hyperstack is highly integrated with Rails with the following functionality out the box:
+## [Section 3](/section_3/readme.md) - Universal applications 
 
-+ Works with Rails 4.x and 5.x
-+ All Hyperstack COMPS architectural concepts (explained above)
-+ A build and deploy system with HotLoading code
-+ Fully integrated with Webpacker and Webpack
-+ Isomorphic Models (sharing the same Model between in your client and server code)
-+ Data synchronization (changes made either on the server or client are pushed to all clients currently displaying that data)
-+ A Policy system for regulating data access and data broadcast
-+ Isomorphic Operations (Operations are classes that encapsulate business logic which can execute on the client or server - they mitigate the need for an internal API)
-+ HyperSpec for Isomorphic RSpec testing across the client and server
-+ Il8n functionality for multi language sites
+This section will cover the following topics:
 
-+ Please see [Hyperstack Rails](/Server/Rails) for more information and examples
++ Building a hybrid mobile/web application 
 
-## Serverless Implementation
-
-In a non-Rails environment, the client-side architectural components of Hyperstack can still be used to build interactive websites in Ruby.
-
-The main consideration is the build process and there are several supported:
-
-+ Compiling Ruby code in your browser (suitable for testing and very small sites)
-+ Compiling Ruby code via Rake tasks (cumbersome but a simple solution that works)
-+ Using Rack + Webpack for a build and deploy system equal to react.js + Webpack
-+ Going completely native and using react.js + Webpack to build and compile Hyperstack
-
-+ Please see [Hyperstack Serverless](/Serverless) for more information and examples
-
-## Hybrid (or Universal) Applications
-
-This project is still in inception and testing phase. As this project evolves we will add examples here.
-
-There are two routes we are exploring:
-
-+ Setting ub a build ebvironment using Cordova to build for Web, Desktop and Mobile from one codebase
-+ Extending our DSL to cover React Native as we cover React today for the web
-
-If you are interested or have experience here please reach out to us on Slack.
