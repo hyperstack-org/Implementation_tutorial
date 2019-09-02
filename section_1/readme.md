@@ -2,7 +2,7 @@
 
 This section will cover the following topics:
 
-+ Creating a new Rail app with Hyperstack
++ [Creating a new Rail app with Hyperstack](#creating-a-new-rail-app-with-hyperstack)
 + Adding a SPA Router
 + Using JavaScript libraries
 + Working with Isomorphic models and Policies
@@ -10,26 +10,35 @@ This section will cover the following topics:
 
 ## Creating a new Rail app with Hyperstack
 
-Creating a new Rails application with Hyprstack all installed is very simple:
+Creating a new Rails application with Hyperstack all installed is very simple:
 
-Create a new rails application
+Create a new rails application:
 
-`rails new MyApp`
+```
+rails new MyApp
+```
 
-Add the Hyperstack gem
+Add the Hyperstack gem:
 
-`cd MyApp`
-`bundle add 'rails-hyperstack' --version "~> 1.0.alpha1.0"`
+```
+cd MyApp
+
+bundle add 'rails-hyperstack' --version "~> 1.0.alpha1.0"
+```
 
 Run the installer (which will create all the Hyperstack folders and config)
 
-`bundle exec rails hyperstack:install`
+```
+bundle exec rails hyperstack:install
+```
 
-And that's it! Hyperstack is installed.
+And that's it, Hyperstack is installed.
 
 Run the server and navigate load the webpage in your browser:
 
-`foreman start`
+```
+foreman start
+```
 
 Navigate to: 
 
