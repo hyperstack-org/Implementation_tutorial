@@ -43,4 +43,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # added by hyperstack installer
+  config.assets.paths << Rails.root.join('public', 'packs-test', 'js').to_s
 end
