@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "^4.0.7",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "react": "16",
     "react-dom": "16",
     "react-router": "^5.0.0",
